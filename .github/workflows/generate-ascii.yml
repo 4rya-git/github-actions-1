@@ -9,18 +9,8 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - name: Install cowsay
-              run: sudo apt-get install cowsay -y
+            - name: List repository files
+              run: ls -ltra
 
-            - name: Execute cowsay
-              run: cowsay -f dragon "Dragon" >> dragon.txt
-            
-            - name: Test file exists
-              run: grep -i "dragon" dragon.txt
-            
-            - name: Read file
-              run: cat dragon.txt
-
-            - name: Checkout repository files
-              run: ls
-
+            - name: Execute shell script
+              run: ./ascii-script.sh
